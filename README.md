@@ -1,27 +1,41 @@
 # AppMovies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Author: [Mariia Bel](https://github.com/MariiaBel)
 
-## Development server
+GitHub Pages: https://mariiabel.github.io/app.movie/ 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Movies Database API: [TMDB](https://www.themoviedb.org/documentation/api)
 
-## Code scaffolding
+---
+## Development plan
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Basic functionality:**
 
-## Build
+1. Developing Services for getting data from Database API.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Routing
 
-## Running unit tests
+3. HomePage (trending, popular, upcoming)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Live Seach
 
-## Running end-to-end tests
+4. Movie/series details page
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5.  Personal details page
 
-## Further help
+**Additional functionality:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Improve Live Search
+
+2. Movie list page with with filter and sorting options
+
+3.  Movies by Genre page with pagination and searching features
+
+4.  Improve Movie Details Page  with the list of cast and crew members with their roles
+
+**Extra functionality:**
+
+1. Authentication feature similar to OAuth
+
+2. Favorite feature for adding and removing movies  from users` favorite list
+
