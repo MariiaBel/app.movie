@@ -6,9 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CinemahallModule } from './pages/cinemahall/cinemahall.module';
-import { ApiDatabaseInterceptor } from './servises/http/api-database.interceptor';
+import { ApiKeyDatabaseInterceptor } from './servises/http/api-key-database.interceptor';
 import { MediaDetailsModule } from './pages/media-details/media-details.module';
 import { PersonalDetailsModule } from './pages/personal-details/personal-details.module';
+import { ApiUrlDatabaseInterceptor } from './servises/http/api-url-database.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,12 @@ import { PersonalDetailsModule } from './pages/personal-details/personal-details
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: ApiDatabaseInterceptor,
+      useClass: ApiKeyDatabaseInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiUrlDatabaseInterceptor,
       multi: true
     }
   ],

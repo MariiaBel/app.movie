@@ -12,7 +12,7 @@ export class DetailsService {
 
   public requestDetailsByType<CinemaModelType>(data: DetailsData): Observable<CinemaModelType> {
 
-    return this.http.get<CinemaModelType>(`/api/${data.type}/${data.id}`).pipe(
+    return this.http.get<CinemaModelType>(`/${data.type}/${data.id}`).pipe(
       catchError<CinemaModelType, ObservableInput<any>>(error => of([]))
     )
   }

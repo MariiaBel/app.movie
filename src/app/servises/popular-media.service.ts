@@ -20,7 +20,7 @@ export class PopularMediaService {
 
   public requestMediaByType(data:MediaData): Observable<MediaResult[]> {
     const params = this.requestParams
-    return this.http.get<ResponseData<MediaResult>>(`/api/${data.type}/popular`, {params}).pipe(
+    return this.http.get<ResponseData<MediaResult>>(`/${data.type}/popular`, {params}).pipe(
       map(response => response.results),
       catchError(error => of([]))
     )
