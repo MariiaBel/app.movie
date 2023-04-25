@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of} from 'rxjs';
 import { MediaResult, ResponseData } from './model/response-data';
-import { MediaData} from './model/type-data';
+import { MediaType} from './model/type-data';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +17,9 @@ export class UpcomingMediaService {
     }
   })
 
-  public requestMediaByType(data: MediaData): Observable<MediaResult[]> {
+  public requestMediaByType(type:MediaType): Observable<MediaResult[]> {
     const params = this.requestParams
-    return this.http.get<ResponseData<MediaResult>>(`/${data.type}/upcoming`, {params}).pipe(
+    return this.http.get<ResponseData<MediaResult>>(`/${type}/upcoming`, {params}).pipe(
       map(response => response.results),
       catchError(error => of([]))
     )

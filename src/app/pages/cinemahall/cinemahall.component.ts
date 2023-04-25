@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { mergeRequest } from 'src/app/servises/hint/request';
 import { concatResponses } from 'src/app/servises/hint/response';
 import { MediaResult } from 'src/app/servises/model/response-data';
@@ -26,17 +25,17 @@ export class CinemahallComponent implements OnInit {
     private readonly apiUpcomingMedia: UpcomingMediaService
   ){
 
-    mergeRequest<MediaResult[]>([{type: 'movie'}, {type: 'tv'}], this.apiPopularMedia.requestMediaByType.bind(this.apiPopularMedia))
+    mergeRequest<MediaResult[]>(['movie', 'tv'], this.apiPopularMedia.requestMediaByType.bind(this.apiPopularMedia))
       .subscribe((data:MediaResult[][]) => {
         this.MediaData.popular.content = concatResponses(data)
       }
     )
-    mergeRequest<MediaResult[]>([{type: 'movie'}, {type: 'tv'}], this.apiTrendingMedia.requestMediaByType.bind(this.apiTrendingMedia))
+    mergeRequest<MediaResult[]>(['movie', 'tv'], this.apiTrendingMedia.requestMediaByType.bind(this.apiTrendingMedia))
       .subscribe((data:MediaResult[][]) => {
         this.MediaData.trending.content = concatResponses(data)
       }
     )
-    mergeRequest<MediaResult[]>([{type: 'movie'}, {type: 'tv'}], this.apiUpcomingMedia.requestMediaByType.bind(this.apiUpcomingMedia))
+    mergeRequest<MediaResult[]>(['movie', 'tv'], this.apiUpcomingMedia.requestMediaByType.bind(this.apiUpcomingMedia))
       .subscribe((data:MediaResult[][]) => {
         this.MediaData.upcoming.content = concatResponses(data)
       }

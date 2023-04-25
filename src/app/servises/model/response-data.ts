@@ -18,6 +18,3 @@ export interface PersonResult {
     known_for_department: string,
     also_known_as: string[]
 }
-
-// QUESTION: How to make a new interface, which will have PersonResult interface OR MediaResult interface
-// export interface CinemaModelType

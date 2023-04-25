@@ -1,7 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, forkJoin, mergeMap, Observable, ObservableInput, of, take } from 'rxjs';
-import { CinemaType, DetailsData, MediaType } from './model/type-data';
+import { catchError, Observable, ObservableInput, of, take } from 'rxjs';
+import { DetailsData} from './model/type-data';
 
 @Injectable({
   providedIn: 'root'
