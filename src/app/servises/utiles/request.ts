@@ -1,5 +1,5 @@
-import { forkJoin, mergeMap, Observable, of, take, tap } from "rxjs"
-import { MediaType } from "../model/type-data"
+import { forkJoin, Observable} from "rxjs"
+import { MediaType } from "src/app/models/media/types"
 
 
 export function mergeRequest<RequestResult>(dataList: MediaType[], requestFn: Function): Observable<RequestResult[]> {

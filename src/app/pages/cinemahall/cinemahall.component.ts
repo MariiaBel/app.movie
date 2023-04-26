@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { mergeRequest } from 'src/app/servises/hint/request';
-import { concatResponses } from 'src/app/servises/hint/response';
-import { MediaResult } from 'src/app/servises/model/response-data';
-import { PopularMediaService } from 'src/app/servises/popular-media.service';
-import { TrendingMediaService } from 'src/app/servises/trending-media.service';
-import { UpcomingMediaService } from 'src/app/servises/upcoming-media.service';
+import { PopularMediaService } from 'src/app/models/media/services/popular-media.service';
+import { TrendingMediaService } from 'src/app/models/media/services/trending-media.service';
+import { UpcomingMediaService } from 'src/app/models/media/services/upcoming-media.service';
+import { MediaResult } from 'src/app/models/media/types';
+import { mergeRequest } from 'src/app/servises/utiles/request';
+import { concatResponses } from 'src/app/servises/utiles/response';
 
 interface Sections {
   title: string,

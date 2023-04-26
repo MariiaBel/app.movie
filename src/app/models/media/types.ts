@@ -1,4 +1,4 @@
-export interface ResponseData<ResponseType> {
+export interface MediaDataList<ResponseType> {
     page: number,
     total_pages: number,
     results: ResponseType[]
@@ -12,9 +12,9 @@ export interface MediaResult {
     vote_average: number
 }
 
-export interface PersonResult {
-    biography: string,
-    birthday: string | null,
-    known_for_department: string,
-    also_known_as: string[]
+export type MediaType = 'movie' | 'tv'
+
+export type DetailsMediaData = {
+    type: MediaType,
+    id: number
 }
