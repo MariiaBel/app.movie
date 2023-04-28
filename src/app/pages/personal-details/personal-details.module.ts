@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PersonalDetailsComponent } from './personal-details.component';
 
 
@@ -11,8 +10,6 @@ import { PersonalDetailsComponent } from './personal-details.component';
   exports: [
     PersonalDetailsComponent
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: []
 })
 export class PersonalDetailsModule { }

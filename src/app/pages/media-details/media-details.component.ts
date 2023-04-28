@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { DetailsMediaService } from 'src/app/models/media/services/details-media.service';
-import { DetailsMediaData, MediaResult } from 'src/app/models/media/types';
+import { DetailsMediaService } from 'src/app/features/media/services/details-media.service';
+import { DetailsMediaData, MediaResult } from 'src/app/features/media/types';
 
 
 @Component({

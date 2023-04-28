@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { DetailsPersonService } from 'src/app/models/person/services/details-person.service';
-import { DetailsPersonData, PersonResult } from 'src/app/models/person/types';
+import { DetailsPersonService } from 'src/app/features/person/services/details-person.service';
+import { DetailsPersonData, PersonResult } from 'src/app/features/person/types';
 
 @Component({
   selector: 'mov-personal-details',
