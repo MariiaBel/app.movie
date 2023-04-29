@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MediaDetailsComponent } from './media-details.component';
 
@@ -10,6 +11,8 @@ import { MediaDetailsComponent } from './media-details.component';
   exports: [
     MediaDetailsComponent
   ],
-  imports: []
+  imports: [
+    CommonModule
+  ]
 })
 export class MediaDetailsModule { }
