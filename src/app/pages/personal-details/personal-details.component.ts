@@ -5,8 +5,6 @@ import { DetailsPersonService } from 'src/app/features/person/services/details-p
 import { DetailsPersonData, PersonResult } from 'src/app/features/person/types';
 
 
-const DEFAULT_DATA:DetailsPersonData = { type: 'person', id: 123 }
-
 @Component({
   selector: 'mov-personal-details',
   templateUrl: './personal-details.component.html',
@@ -19,17 +17,16 @@ export class PersonalDetailsComponent implements OnInit {
   ) {
   }
 
-  public data:DetailsPersonData = {
-    type: DEFAULT_DATA.type,
-    id: DEFAULT_DATA.id
-  }
   public personDetails$?: Observable<PersonResult>
 
   ngOnInit(): void {
     this.personDetails$ = this.route.paramMap.pipe(
       switchMap(params => {
-        this.data.id = Number(params.get('id')) || DEFAULT_DATA.id
-        return this.getPersonDetails(this.data)
+        const data:DetailsPersonData = {
+          type: 'person',
+          id: Number(params.get('id'))
+        }
+        return this.getPersonDetails(data)
       })
     )
   }
