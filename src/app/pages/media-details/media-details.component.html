@@ -1,1 +1,5 @@
 <p>media-details works!</p>
+
+<div *ngIf="mediaDetails$ | async as media">
+    {{ media | json}}
+</div>

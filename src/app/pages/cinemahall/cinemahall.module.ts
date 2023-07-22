@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CinemahallComponent } from './cinemahall.component';
 
@@ -10,6 +11,8 @@ import { CinemahallComponent } from './cinemahall.component';
   exports: [
     CinemahallComponent
   ],
-  imports: []
+  imports: [
+    CommonModule
+  ]
 })
 export class CinemahallModule { }

@@ -11,13 +11,13 @@ Movies Database API: [TMDB](https://www.themoviedb.org/documentation/api)
 
 **Basic functionality:**
 
-1. Developing Services for getting data from Database API.
+1. [Developing Services for getting data from Database API](https://github.com/MariiaBel/app.movie/pull/2).
 
 2. Routing
 
 3. HomePage (trending, popular, upcoming)
 
-4. Live Seach
+4. Live Search
 
 4. Movie/series details page
 

@@ -1,3 +1,4 @@
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PersonalDetailsComponent } from './personal-details.component';
 
@@ -10,6 +11,8 @@ import { PersonalDetailsComponent } from './personal-details.component';
   exports: [
     PersonalDetailsComponent
   ],
-  imports: []
+  imports: [
+    CommonModule
+  ]
 })
 export class PersonalDetailsModule { }

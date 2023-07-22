@@ -1,1 +1,5 @@
 <p>personal-details works!</p>
+
+<div *ngIf="personDetails$ | async as person">
+    {{ person | json }}
+</div>

@@ -1,26 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 import { DetailsPersonService } from 'src/app/features/person/services/details-person.service';
 import { DetailsPersonData, PersonResult } from 'src/app/features/person/types';
+
 
 @Component({
   selector: 'mov-personal-details',
   templateUrl: './personal-details.component.html',
   styleUrls: ['./personal-details.component.scss']
 })
-export class PersonalDetailsComponent {
+export class PersonalDetailsComponent implements OnInit {
   constructor(
     private readonly apiDetailsMedia: DetailsPersonService,
+    private readonly route: ActivatedRoute
   ) {
+  }
 
-    this.apiDetailsMedia.requestDetailsByType<PersonResult>(this.data)
-      .subscribe((detail:PersonResult) => {
-        this.detailData = detail
-        console.log(this.detailData)
-      }
+  public personDetails$?: Observable<PersonResult>
+
+  ngOnInit(): void {
+    this.personDetails$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        const data:DetailsPersonData = {
+          type: 'person',
+          id: Number(params.get('id'))
+        }
+        return this.getPersonDetails(data)
+      })
     )
   }
 
-  @Input() public data:DetailsPersonData = {type: 'person', id: 123 }
-
-  public detailData?:PersonResult
+  private getPersonDetails(data:DetailsPersonData): Observable<PersonResult> {
+    return this.apiDetailsMedia.requestDetailsByType<PersonResult>(data)
+  }
 }
